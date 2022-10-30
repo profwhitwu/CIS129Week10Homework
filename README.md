@@ -15,6 +15,8 @@ If "y" is selected, the app should restart the process of asking the user to inp
 
 `Thank you for using this simple calculator!`
 
+Be sure to keep running the application until the user terminates the program by selecting "n" for no when being asked if they want to enter another expression.
+
 ### Validation
 It is possible our users might enter invalid characters, so we need to validate input prior to running our equation.  Below is a list of operators we will support for this app:
 
@@ -37,7 +39,7 @@ Any expression containing one or more string values that are not numbers, single
 
 `Invalid input detected: <invalid character(s) here>.  Please try again`
 
-The app should then inquire the user to input their mathematical expression using the opening message defined earlier in this assignment.
+The app should then inquire the user to input their mathematical expression using the opening message defined earlier in this assignment.  Repeat this process until the user inputs the correct data in the correct format. 
 
 ### Separation of Concerns
 It does not make sense to throw all the app logic into Program.cs, so you should delegate functionality to a class.  I would expect the following functionality to be present in a class (each with its own method):
@@ -48,5 +50,12 @@ Also consider if you should use a regular or static class.  Remember, a regular 
 
 
 ### Hints
-Your midterm introduced you to libraries, which I highly recommend you use in this homework.  I would expect you to use one when running your calculations, otherwise you will be spending a lot of time trying to figure out to manually execute a mathematical expression while adhering to the order of operations.  Remember, answers to complex problems like these are usually one google search away!  Feel free to use a Nuget package if you’d like (though I do want to stress that .NET has something built in that should help you execute expressions).
-Don’t forget that I asked you to ensure that numbers and operators are separated by a space.  The reason for this is that the string datatype has a built-in method that allows you to **split** a delimited string into substrings using a defined delimiter (your empty space).  This will return collection of substrings as an array.  From there, you could check that each element is either a valid number or operator.  
+- Your midterm introduced you to libraries, which I highly recommend you use in this homework.  I would expect you to use one when running your calculations, otherwise you will be spending a lot of time trying to figure out to manually execute a mathematical expression while adhering to the order of operations.  Remember, answers to complex problems like these are usually one google search away!  Feel free to use a Nuget package if you'd like (though I do want to stress that .NET has something built in that should help you execute expressions).
+
+- Don't forget that I asked you to ensure that numbers and operators are separated by a space.  The reason for this is that the string datatype has a built-in method that allows you to **split** a delimited string into substrings using a defined delimiter (your empty space).  This will return collection of substrings as an array.  From there, you could check that each element is either a valid number or operator.  
+
+- There are two parts of this app that will need to run on repeat:
+  - When a user submits the wrong input.
+  - When a user is asked if they wish to enter another expression and they select "y" for yes.
+
+  You will need to make sure these parts of your app repeat as long as they need to.  What concept in our class have we learned that can help you acomplish this?  
