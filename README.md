@@ -22,7 +22,7 @@ It is possible our users might enter invalid characters, so we need to validate 
 
 |Operator| What It Should Do|
 |--------|------------------|
-|   +    | Addtion          |
+|   +    | Addition          |
 |   -    | Subtraction      |
 |   *    | Multiplication   |
 |   /    | Division         |
